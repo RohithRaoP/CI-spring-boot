@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CI Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+    <h1>Spring Boot CI Project</h1>
+    <button onclick="loadData()">Load Data</button>
+    <p id="output"></p>
+
+    <script>
+        async function loadData() {
+            const res = await fetch('http://localhost:8080/api/message');
+            const data = await res.text();
+            document.getElementById('output').innerText = data;
+        }
+    </script>
+
+</body>
+</html>
